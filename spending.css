@@ -1,0 +1,891 @@
+/* =====================================================
+   FINANCEPRO - SAVINGS PAGE
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #f6f7fb;
+    font-family: Arial, sans-serif;
+    color: #172033;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.topbar {
+    margin-bottom: 30px;
+}
+
+.topbar h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+}
+
+.topbar p {
+    margin-top: 7px;
+    color: #8a91a2;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   ADD GOAL BUTTON
+   ===================================================== */
+
+.add-goal-btn {
+    border: none;
+
+    padding: 13px 22px;
+
+    border-radius: 11px;
+
+    background: #4f46e5;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(79, 70, 229, 0.18);
+
+    transition: all 0.25s ease;
+}
+
+.add-goal-btn:hover {
+    background: #4338ca;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(79, 70, 229, 0.25);
+}
+
+
+/* =====================================================
+   SUMMARY CARDS
+   ===================================================== */
+
+.cards {
+    margin-bottom: 25px;
+}
+
+.cards .card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 24px;
+
+    border: 1px solid #e9ebf2;
+
+    border-radius: 18px;
+
+    background: white;
+
+    box-shadow:
+        0 6px 22px rgba(20, 25, 40, 0.04);
+
+    transition: all 0.25s ease;
+}
+
+.cards .card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 95px;
+    height: 95px;
+
+    right: -32px;
+    top: -32px;
+
+    border-radius: 50%;
+
+    background: #f0efff;
+}
+
+.cards .card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(20, 25, 40, 0.08);
+}
+
+.cards .card p,
+.cards .card h2,
+.cards .card span {
+    position: relative;
+
+    z-index: 1;
+}
+
+.cards .card p {
+    margin-bottom: 11px;
+
+    color: #8a91a2;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.cards .card h2 {
+    margin-bottom: 8px;
+
+    color: #171c2c;
+
+    font-size: 27px;
+
+    font-weight: 700;
+}
+
+.cards .card span {
+    color: #7b8495;
+
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   SAVINGS GRID
+   ===================================================== */
+
+.savings-grid {
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr;
+
+    gap: 22px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   COMMON PANEL
+   ===================================================== */
+
+.panel {
+
+    background: white;
+
+    border: 1px solid #e9ebf2;
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 6px 22px rgba(20, 25, 40, 0.035);
+}
+
+.panel-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 25px;
+}
+
+.panel-header h2 {
+
+    color: #171c2c;
+
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+.panel-subtitle {
+
+    margin-top: 6px;
+
+    color: #8a91a2;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   TARGET BADGE
+   ===================================================== */
+
+.target-badge {
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: #eef2ff;
+
+    color: #4f46e5;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   SAVINGS PROGRESS AREA
+   ===================================================== */
+
+.savings-progress-area {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    gap: 30px;
+
+    min-height: 270px;
+}
+
+
+/* =====================================================
+   SAVINGS CIRCLE
+   ===================================================== */
+
+.savings-circle {
+
+    width: 205px;
+
+    height: 205px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            #4f46e5 0deg 299deg,
+            #e9eaf2 299deg 360deg
+        );
+
+    position: relative;
+
+    box-shadow:
+        0 12px 30px rgba(79, 70, 229, 0.10);
+}
+
+
+/* Inner circle */
+
+.savings-circle::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 158px;
+
+    height: 158px;
+
+    border-radius: 50%;
+
+    background: white;
+}
+
+
+.circle-content {
+
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.circle-content strong {
+
+    color: #171c2c;
+
+    font-size: 35px;
+
+    font-weight: 700;
+}
+
+.circle-content span {
+
+    margin-top: 5px;
+
+    color: #8a91a2;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   SAVINGS DETAILS
+   ===================================================== */
+
+.savings-details {
+
+    min-width: 180px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 17px;
+}
+
+.savings-details > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding-bottom: 14px;
+
+    border-bottom: 1px solid #eef0f5;
+}
+
+.savings-details > div:last-child {
+
+    border-bottom: none;
+
+    padding-bottom: 0;
+}
+
+.savings-details span {
+
+    color: #8a91a2;
+
+    font-size: 12px;
+}
+
+.savings-details strong {
+
+    color: #252b3a;
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   RECOMMENDATION
+   ===================================================== */
+
+.recommendation-panel {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* Recommendation box */
+
+.recommendation-box {
+
+    display: flex;
+
+    gap: 14px;
+
+    padding: 18px;
+
+    border: 1px solid #e1e2ff;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f6f5ff,
+            #fbfbff
+        );
+
+    margin-bottom: 18px;
+}
+
+
+/* Icon */
+
+.recommendation-icon {
+
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #eef2ff;
+
+    font-size: 20px;
+}
+
+
+/* Text */
+
+.recommendation-box h3 {
+
+    margin-bottom: 7px;
+
+    color: #252b3a;
+
+    font-size: 15px;
+}
+
+.recommendation-box p {
+
+    color: #70788a;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   SAVING RULES
+   ===================================================== */
+
+.saving-rule {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eef0f5;
+}
+
+.saving-rule:last-child {
+    border-bottom: none;
+}
+
+.saving-rule span {
+
+    color: #8a91a2;
+
+    font-size: 12px;
+}
+
+.saving-rule strong {
+
+    color: #252b3a;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   SAVINGS GOALS
+   ===================================================== */
+
+.goals-panel {
+
+    margin-bottom: 25px;
+}
+
+.goals-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+/* Goal card */
+
+.goal-card {
+
+    padding: 20px;
+
+    border: 1px solid #e9ebf2;
+
+    border-radius: 17px;
+
+    background: #fafbfe;
+
+    transition: all 0.25s ease;
+}
+
+.goal-card:hover {
+
+    background: white;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(20, 25, 40, 0.06);
+}
+
+
+/* Goal top */
+
+.goal-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 17px;
+}
+
+
+/* Goal icon */
+
+.goal-icon {
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #eef2ff;
+
+    font-size: 20px;
+}
+
+
+/* Goal status */
+
+.goal-status {
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background: #ecfdf3;
+
+    color: #16a34a;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+/* Goal title */
+
+.goal-card h3 {
+
+    margin-bottom: 6px;
+
+    color: #252b3a;
+
+    font-size: 15px;
+}
+
+.goal-card p {
+
+    margin-bottom: 15px;
+
+    color: #8a91a2;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   GOAL PROGRESS
+   ===================================================== */
+
+.goal-progress {
+
+    width: 100%;
+
+    height: 9px;
+
+    margin-bottom: 9px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #e6e8ef;
+}
+
+.emergency-progress {
+
+    width: 30%;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: #4f46e5;
+}
+
+.vacation-progress {
+
+    width: 30%;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: #22c55e;
+}
+
+.laptop-progress {
+
+    width: 25%;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: #f59e0b;
+}
+
+
+/* Goal bottom */
+
+.goal-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: #8a91a2;
+
+    font-size: 10px;
+}
+
+.goal-bottom strong {
+
+    color: #555d6f;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   SAVINGS TIPS
+   ===================================================== */
+
+.tips-section {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+
+/* Tip card */
+
+.tip-card {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    padding: 20px;
+
+    border: 1px solid #e9ebf2;
+
+    border-radius: 17px;
+
+    background: white;
+
+    box-shadow:
+        0 5px 18px rgba(20, 25, 40, 0.03);
+
+    transition: 0.25s;
+}
+
+.tip-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(20, 25, 40, 0.06);
+}
+
+
+/* Tip icon */
+
+.tip-icon {
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #f3f4ff;
+
+    font-size: 19px;
+}
+
+
+/* Tip text */
+
+.tip-card h3 {
+
+    margin-bottom: 6px;
+
+    color: #252b3a;
+
+    font-size: 14px;
+}
+
+.tip-card p {
+
+    color: #7b8495;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 1100px) {
+
+    .savings-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .goals-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .tips-section {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .savings-progress-area {
+
+        flex-direction: column;
+
+        padding: 10px 0 20px;
+    }
+
+    .savings-details {
+
+        width: 100%;
+    }
+
+    .goals-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .tips-section {
+
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+
+        padding: 20px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .topbar h1 {
+
+        font-size: 27px;
+    }
+
+    .savings-circle {
+
+        width: 175px;
+        height: 175px;
+    }
+
+    .savings-circle::before {
+
+        width: 135px;
+        height: 135px;
+    }
+
+    .circle-content strong {
+
+        font-size: 29px;
+    }
+
+    .recommendation-box {
+
+        padding: 15px;
+    }
+
+}
